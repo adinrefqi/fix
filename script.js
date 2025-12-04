@@ -98,6 +98,12 @@ async function checkUserRole(userId) {
         const welcomeText = document.querySelector('.header-text h2');
         if (welcomeText) welcomeText.textContent = `Selamat Datang, ${profile.nama_lengkap || 'Bapak/Ibu Guru'}`;
 
+        // Update User Profile Name in Top Bar
+        const userProfileName = document.querySelector('.user-profile span');
+        if (userProfileName) {
+            userProfileName.textContent = profile.role === 'admin' ? 'Admin' : 'Guru';
+        }
+
         // JIKA BUKAN ADMIN (GURU BIASA), SEMBUNYIKAN MENU BERBAHAYA
         if (profile.role !== 'admin') {
             // Daftar menu yang harus disembunyikan dari guru
