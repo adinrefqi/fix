@@ -204,6 +204,16 @@ option {
     border-radius: 1rem;
     text-align: center;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.action-card button {
+    margin-top: auto;
+    width: 100%;
+    justify-content: center;
 }
 
 .action-card:hover {
