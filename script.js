@@ -598,7 +598,8 @@ function editKategori(id) {
         openModal('modal-kategori');
         document.getElementById('kategori-id').value = k.id;
         document.getElementById('kategori-nama').value = k.nama_kategori;
-        document.getElementById('kategori-deskripsi').value = k.deskripsi;
+        document.getElementById('kategori-nama').value = k.nama_kategori;
+        // document.getElementById('kategori-deskripsi').value = k.deskripsi; // Removed
     }
 }
 
@@ -610,7 +611,7 @@ function renderKategoriTable() {
         tr.innerHTML = `
             <td>${index + 1}</td>
             <td>${k.nama_kategori}</td>
-            <td>${k.deskripsi}</td>
+            <!-- <td>${k.deskripsi}</td> Removed -->
             <td>
                 <button class="btn-secondary" onclick="editKategori('${k.id}')" style="margin-right: 0.5rem;"><i class="fa-solid fa-pen"></i></button>
                 <button class="btn-danger" onclick="deleteKategori('${k.id}')"><i class="fa-solid fa-trash"></i></button>
