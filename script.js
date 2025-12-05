@@ -1145,11 +1145,11 @@ async function processStudentImport(data) {
         const row = data[i];
         const namaKelas = row[2];
         if (namaKelas) {
-            const existingKelas = appData.kelas.find(k => k.nama.toLowerCase() === namaKelas.toString().toLowerCase())
-                || newKelasList.find(k => k.nama.toLowerCase() === namaKelas.toString().toLowerCase());
+            const existingKelas = appData.kelas.find(k => k.nama_kelas.toLowerCase() === namaKelas.toString().toLowerCase())
+                || newKelasList.find(k => k.nama_kelas.toLowerCase() === namaKelas.toString().toLowerCase());
 
             if (!existingKelas) {
-                newKelasList.push({ id: generateId(), nama: namaKelas.toString() });
+                newKelasList.push({ id: generateId(), nama_kelas: namaKelas.toString() });
             }
         }
     }
@@ -1171,7 +1171,7 @@ async function processStudentImport(data) {
         if (nama && nis) {
             let kelasId = '';
             if (namaKelas) {
-                const k = appData.kelas.find(k => k.nama.toLowerCase() === namaKelas.toString().toLowerCase());
+                const k = appData.kelas.find(k => k.nama_kelas.toLowerCase() === namaKelas.toString().toLowerCase());
                 if (k) kelasId = k.id;
             }
 
